@@ -93,7 +93,7 @@ export default function Flights() {
     };
 
     return (
-        <div className="p-6 flex-1">
+        <div className="p-6 flex-1 overflow-auto">
             <h1 className="text-2xl font-bold mb-4">Flight Logbook</h1>
             
             {/* Flight Summary Stats */}
