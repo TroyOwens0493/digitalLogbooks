@@ -1,10 +1,15 @@
-// components/Sidebar.jsx
+// components/Sidebar.tsx
 "use client";
 import { Home, Calendar, Plane, Wrench, FileText, Settings, AlertCircle } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Sidebar() {
+interface SidebarProps {
+    currentPage?: string;
+    onPageChange?: (page: string) => void;
+}
+
+export default function Sidebar({ currentPage, onPageChange }: SidebarProps = {}) {
     const pathname = usePathname();
 
     const menuItems = [
@@ -18,7 +23,7 @@ export default function Sidebar() {
         { label: "Settings", icon: <Settings size={20} />, href: "/settings" },
     ];
 
-    const handleMenuClick = (label) => {
+    const handleMenuClick = (label: string) => {
         if (onPageChange) {
             onPageChange(label);
         }
@@ -31,11 +36,17 @@ export default function Sidebar() {
             </div>
             <ul className="space-y-2">
                 {menuItems.map((item, idx) => {
-                    const isActive = pathname === item.href;
+                    const isActive = onPageChange ? currentPage === item.label : pathname === item.href;
                     return (
                         <li key={idx}>
                             <Link 
                                 href={item.href}
+                                onClick={(e) => {
+                                    if (onPageChange) {
+                                        e.preventDefault();
+                                        handleMenuClick(item.label);
+                                    }
+                                }}
                                 className={`flex items-center gap-3 p-2 rounded-lg cursor-pointer transition-colors ${
                                     isActive 
                                         ? 'bg-blue-600 text-white' 
