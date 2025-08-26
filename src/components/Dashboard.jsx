@@ -1,5 +1,7 @@
 // components/Dashboard.jsx
+"use client";
 import { AlertCircle } from "lucide-react";
+import Link from "next/link";
 
 export default function Dashboard() {
     return (
@@ -15,7 +17,9 @@ export default function Dashboard() {
                         <li>Dual <strong>B67890</strong> - 10:30 – 12:00</li>
                         <li>Solo <strong>C23456</strong> - 13:00 – 15:00</li>
                     </ul>
-                    <button className="mt-3 text-blue-500 text-sm">View Calendar</button>
+                    <Link href="/calendar">
+                        <button className="mt-3 text-blue-500 text-sm hover:text-blue-600">View Calendar</button>
+                    </Link>
                 </div>
 
                 {/* Aircraft Status */}
