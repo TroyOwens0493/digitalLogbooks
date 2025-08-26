@@ -1,5 +1,6 @@
 // components/Dashboard.jsx
 import { AlertCircle } from "lucide-react";
+import Link from "next/link";
 
 export default function Dashboard() {
     return (
@@ -24,7 +25,9 @@ export default function Dashboard() {
                     <p className="text-sm font-semibold">N12345</p>
                     <p className="text-green-600 font-semibold">Airworthy</p>
                     <p className="text-sm text-gray-700 mt-2">Squawks</p>
-                    <p className="text-red-500 font-bold">2</p>
+                    <Link href="/squawks" className="text-red-500 font-bold hover:text-red-700">
+                        2
+                    </Link>
                     <p className="text-gray-700 text-xs">Pending Squawks</p>
                 </div>
 
@@ -34,7 +37,9 @@ export default function Dashboard() {
                     <div className="flex flex-col gap-2">
                         <button className="bg-gray-100 p-2 rounded-lg">Book Flight</button>
                         <button className="bg-gray-100 p-2 rounded-lg">Log Flight</button>
-                        <button className="bg-gray-100 p-2 rounded-lg">Report Squawk</button>
+                        <Link href="/squawks" className="bg-gray-100 p-2 rounded-lg text-center hover:bg-gray-200">
+                            Report Squawk
+                        </Link>
                     </div>
                 </div>
 
