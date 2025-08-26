@@ -41,7 +41,7 @@ export default function Calendar() {
     };
 
     return (
-        <div className="p-6 flex-1">
+        <div className="p-6 flex-1 overflow-auto">
             <div className="flex items-center justify-between mb-6">
                 <h1 className="text-2xl font-bold">Flight Calendar</h1>
                 <div className="flex items-center gap-4">
