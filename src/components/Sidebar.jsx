@@ -1,16 +1,17 @@
 // components/Sidebar.jsx
+import Link from "next/link";
 import { Home, Calendar, Plane, Wrench, FileText, Settings, AlertCircle } from "lucide-react";
 
 export default function Sidebar() {
     const menuItems = [
-        { label: "Dashboard", icon: <Home size={20} /> },
-        { label: "Aircraft", icon: <Plane size={20} /> },
-        { label: "Calendar", icon: <Calendar size={20} /> },
-        { label: "Flights", icon: <Plane size={20} /> },
-        { label: "Squawks", icon: <AlertCircle size={20} /> },
-        { label: "Maintenance", icon: <Wrench size={20} /> },
-        { label: "Reports", icon: <FileText size={20} /> },
-        { label: "Settings", icon: <Settings size={20} /> },
+        { label: "Dashboard", icon: <Home size={20} />, href: "/" },
+        { label: "Aircraft", icon: <Plane size={20} />, href: "#" },
+        { label: "Calendar", icon: <Calendar size={20} />, href: "#" },
+        { label: "Flights", icon: <Plane size={20} />, href: "/flights" },
+        { label: "Squawks", icon: <AlertCircle size={20} />, href: "#" },
+        { label: "Maintenance", icon: <Wrench size={20} />, href: "#" },
+        { label: "Reports", icon: <FileText size={20} />, href: "#" },
+        { label: "Settings", icon: <Settings size={20} />, href: "#" },
     ];
 
     return (
@@ -20,12 +21,18 @@ export default function Sidebar() {
             </div>
             <ul className="space-y-2">
                 {menuItems.map((item, idx) => (
-                    <li
-                        key={idx}
-                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700 cursor-pointer"
-                    >
-                        {item.icon}
-                        <span>{item.label}</span>
+                    <li key={idx}>
+                        {item.href === "#" ? (
+                            <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700 cursor-pointer">
+                                {item.icon}
+                                <span>{item.label}</span>
+                            </div>
+                        ) : (
+                            <Link href={item.href} className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700 cursor-pointer">
+                                {item.icon}
+                                <span>{item.label}</span>
+                            </Link>
+                        )}
                     </li>
                 ))}
             </ul>
