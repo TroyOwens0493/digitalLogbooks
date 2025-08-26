@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
     const pathname = usePathname();
-    
+
     const menuItems = [
         { label: "Dashboard", icon: <Home size={20} />, href: "/" },
         { label: "Aircraft", icon: <Plane size={20} />, href: "/aircraft" },
@@ -17,6 +17,12 @@ export default function Sidebar() {
         { label: "Reports", icon: <FileText size={20} />, href: "/reports" },
         { label: "Settings", icon: <Settings size={20} />, href: "/settings" },
     ];
+
+    const handleMenuClick = (label) => {
+        if (onPageChange) {
+            onPageChange(label);
+        }
+    };
 
     return (
         <div className="w-64 h-screen bg-gray-800 text-white flex flex-col p-4">
