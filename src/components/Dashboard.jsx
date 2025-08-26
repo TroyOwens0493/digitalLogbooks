@@ -1,7 +1,7 @@
 // components/Dashboard.jsx
 import { AlertCircle } from "lucide-react";
 
-export default function Dashboard() {
+export default function Dashboard({ onPageChange }) {
     return (
         <div className="p-6 flex-1">
             <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
@@ -15,7 +15,12 @@ export default function Dashboard() {
                         <li>Dual <strong>B67890</strong> - 10:30 – 12:00</li>
                         <li>Solo <strong>C23456</strong> - 13:00 – 15:00</li>
                     </ul>
-                    <button className="mt-3 text-blue-500 text-sm">View Calendar</button>
+                    <button 
+                        className="mt-3 text-blue-500 text-sm hover:underline"
+                        onClick={() => onPageChange && onPageChange("Calendar")}
+                    >
+                        View Calendar
+                    </button>
                 </div>
 
                 {/* Aircraft Status */}
