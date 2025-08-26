@@ -9,6 +9,7 @@ import Flights from "../components/Flights";
 import Squawks from "../components/Squawks";
 import Maintenance from "../components/Maintenance";
 import Reports from "../components/Reports";
+import Settings from "../components/Settings";
 
 export default function Home() {
     const [currentPage, setCurrentPage] = useState("Dashboard");
@@ -29,6 +30,8 @@ export default function Home() {
                 return <Maintenance />;
             case "Reports":
                 return <Reports />;
+            case "Settings":
+                return <Settings />;
             default:
                 return <Dashboard onPageChange={setCurrentPage} />;
         }
