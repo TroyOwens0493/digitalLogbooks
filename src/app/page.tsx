@@ -6,6 +6,7 @@ import Dashboard from "../components/Dashboard";
 import Aircraft from "../components/Aircraft";
 import Calendar from "../components/Calendar";
 import Flights from "../components/Flights";
+import Squawks from "../components/Squawks";
 
 export default function Home() {
     const [currentPage, setCurrentPage] = useState("Dashboard");
@@ -20,6 +21,8 @@ export default function Home() {
                 return <Calendar />;
             case "Flights":
                 return <Flights />;
+            case "Squawks":
+                return <Squawks />;
             default:
                 return <Dashboard onPageChange={setCurrentPage} />;
         }
