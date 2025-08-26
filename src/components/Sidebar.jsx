@@ -1,7 +1,7 @@
 // components/Sidebar.jsx
 import { Home, Calendar, Plane, Wrench, FileText, Settings, AlertCircle } from "lucide-react";
 
-export default function Sidebar() {
+export default function Sidebar({ currentPage, onPageChange }) {
     const menuItems = [
         { label: "Dashboard", icon: <Home size={20} /> },
         { label: "Aircraft", icon: <Plane size={20} /> },
@@ -13,6 +13,12 @@ export default function Sidebar() {
         { label: "Settings", icon: <Settings size={20} /> },
     ];
 
+    const handleMenuClick = (label) => {
+        if (onPageChange) {
+            onPageChange(label);
+        }
+    };
+
     return (
         <div className="w-64 h-screen bg-gray-800 text-white flex flex-col p-4">
             <div className="flex items-center justify-center mb-6">
@@ -22,7 +28,10 @@ export default function Sidebar() {
                 {menuItems.map((item, idx) => (
                     <li
                         key={idx}
-                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700 cursor-pointer"
+                        className={`flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700 cursor-pointer ${
+                            currentPage === item.label ? "bg-gray-700" : ""
+                        }`}
+                        onClick={() => handleMenuClick(item.label)}
                     >
                         {item.icon}
                         <span>{item.label}</span>
