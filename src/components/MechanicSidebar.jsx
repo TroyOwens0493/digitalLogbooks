@@ -1,6 +1,6 @@
 "use client";
 
-import { Home, AlertCircle, MessageSquare, CalendarDays } from "lucide-react";
+import { Home, AlertCircle, MessageSquare, CalendarDays, Plane } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -12,6 +12,7 @@ export default function MechanicSidebar() {
         { label: "Alerts", icon: <AlertCircle size={20} />, href: "/mechanic-dashboard/alerts" },
         { label: "Squawks", icon: <MessageSquare size={20} />, href: "/mechanic-dashboard/squawks" },
         { label: "Calendar", icon: <CalendarDays size={20} />, href: "/mechanic-dashboard/calendar" },
+        { label: "Aircraft", icon: <Plane size={20} />, href: "/mechanic-dashboard/aircraft" },
     ];
 
     return (
