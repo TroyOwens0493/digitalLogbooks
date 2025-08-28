@@ -12,6 +12,7 @@ export default function PilotSidebar() {
         { label: "Flights", icon: <Plane size={20} />, href: "/pilot-dashboard/flights" },
         { label: "Squawks", icon: <AlertCircle size={20} />, href: "/pilot-dashboard/squawks" },
         { label: "Calendar", icon: <Calendar size={20} />, href: "/pilot-dashboard/calendar" },
+        { label: "Aircraft", icon: <Plane size={20} />, href: "/pilot-dashboard/aircraft" },
     ];
 
     return (
