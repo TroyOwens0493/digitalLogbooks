@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, Wrench, Clock } from "lucide-react";
-import MechanicUpcomingScheduledMaintenance from './MechanicUpcomingScheduledMaintenance';
 
 export default function MechanicCalendarMain() {
   // Sample data for maintenance schedules
@@ -115,7 +114,18 @@ export default function MechanicCalendarMain() {
       {/* Sidebar with upcoming schedule and quick actions */}
       <div className="space-y-6">
         {/* Upcoming Scheduled Maintenance */}
-        <MechanicUpcomingScheduledMaintenance />
+        <div className="bg-white p-4 rounded-2xl shadow">
+          <h3 className="text-lg font-semibold mb-3">Upcoming Scheduled Maintenance</h3>
+          <ul className="space-y-2">
+            {maintenanceSchedules
+              .filter(schedule => new Date(schedule.date) > new Date('2025-08-27')) // Filter for future dates
+              .map((item) => (
+                <li key={item.id} className="bg-gray-50 p-3 rounded-md">
+                  <p className="font-medium">{item.aircraft} - {item.date}: {item.type}</p>
+                </li>
+              ))}
+          </ul>
+        </div>
 
         {/* Quick Actions */}
         <div className="bg-white rounded-2xl shadow p-6">
