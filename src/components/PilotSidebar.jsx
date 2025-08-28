@@ -1,6 +1,6 @@
 "use client";
 
-import { Home } from "lucide-react";
+import { Home, Plane, AlertCircle } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -9,6 +9,8 @@ export default function PilotSidebar() {
 
     const menuItems = [
         { label: "Dashboard", icon: <Home size={20} />, href: "/pilot-dashboard" },
+        { label: "Flights", icon: <Plane size={20} />, href: "/pilot-dashboard/flights" },
+        { label: "Squawks", icon: <AlertCircle size={20} />, href: "/pilot-dashboard/squawks" },
     ];
 
     return (
