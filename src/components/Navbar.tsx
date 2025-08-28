@@ -17,6 +17,9 @@ export default function Navbar() {
       <Link href="/pilot-dashboard" style={{ color: pathname === "/pilot-dashboard" ? "black" : "white", textDecoration: "none", padding: "0.5rem 1rem", border: "1px solid white", borderRadius: "5px", background: pathname === "/pilot-dashboard" ? "white" : "transparent" }}>
         Pilot
       </Link>
+      <Link href="/mechanic-dashboard" style={{ color: pathname === "/mechanic-dashboard" ? "black" : "white", textDecoration: "none", padding: "0.5rem 1rem", border: "1px solid white", borderRadius: "5px", background: pathname === "/mechanic-dashboard" ? "white" : "transparent" }}>
+        Mechanic
+      </Link>
     </nav>
   );
 }
