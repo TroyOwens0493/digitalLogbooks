@@ -14,6 +14,9 @@ export default function Navbar() {
       <Link href="/demo-login" style={{ color: pathname === "/demo-login" ? "black" : "white", textDecoration: "none", padding: "0.5rem 1rem", border: "1px solid white", borderRadius: "5px", background: pathname === "/demo-login" ? "white" : "transparent" }}>
         Demo Login
       </Link>
+      <Link href="/pilot-dashboard" style={{ color: pathname === "/pilot-dashboard" ? "black" : "white", textDecoration: "none", padding: "0.5rem 1rem", border: "1px solid white", borderRadius: "5px", background: pathname === "/pilot-dashboard" ? "white" : "transparent" }}>
+        Pilot
+      </Link>
     </nav>
   );
 }
