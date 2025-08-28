@@ -20,6 +20,9 @@ export default function Navbar() {
       <Link href="/mechanic-dashboard" style={{ color: pathname === "/mechanic-dashboard" ? "black" : "white", textDecoration: "none", padding: "0.5rem 1rem", border: "1px solid white", borderRadius: "5px", background: pathname === "/mechanic-dashboard" ? "white" : "transparent" }}>
         Mechanic
       </Link>
+      <Link href="/admin-dashboard" style={{ color: pathname === "/admin-dashboard" ? "black" : "white", textDecoration: "none", padding: "0.5rem 1rem", border: "1px solid white", borderRadius: "5px", background: pathname === "/admin-dashboard" ? "white" : "transparent" }}>
+        Admin
+      </Link>
     </nav>
   );
 }
