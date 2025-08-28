@@ -10,7 +10,7 @@ export default function PilotDashboard() {
   return (
     <div className="flex">
       <PilotSidebar />
-      <div className="flex-1 p-6 bg-white">
+      <div className="flex-1 p-6 bg-white overflow-auto">
         <h1 className="text-2xl font-bold mb-4">Pilot Dashboard</h1>
 
         <div className="grid grid-cols-3 gap-4">
