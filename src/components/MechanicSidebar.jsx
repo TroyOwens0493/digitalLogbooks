@@ -1,6 +1,6 @@
 "use client";
 
-import { Home } from "lucide-react";
+import { Home, AlertCircle } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -9,6 +9,7 @@ export default function MechanicSidebar() {
 
     const menuItems = [
         { label: "Dashboard", icon: <Home size={20} />, href: "/mechanic-dashboard" },
+        { label: "Alerts", icon: <AlertCircle size={20} />, href: "/mechanic-dashboard/alerts" },
     ];
 
     return (
